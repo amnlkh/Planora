@@ -1,19 +1,22 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\DashboardController;
+use App\Http\Controllers\Api\HolidayController;
+use App\Http\Controllers\Api\ScheduleController;
+use App\Http\Controllers\Api\TaskController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/v1/tasks', [TaskController::class, 'index']);
+    Route::post('/v1/tasks', [TaskController::class, 'store']);
+    Route::put('/v1/tasks/{id}', [TaskController::class, 'update']);
+    Route::delete('/v1/tasks/{id}', [TaskController::class, 'destroy']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+    Route::get('/v1/schedules', [ScheduleController::class, 'index']);
+    Route::post('/v1/schedules', [ScheduleController::class, 'store']);
+    Route::delete('/v1/schedules/{id}', [ScheduleController::class, 'destroy']);
+
+    Route::get('/v1/dashboard', [DashboardController::class, 'index']);
+
+    Route::get('/v1/holidays', [HolidayController::class, 'index']);
 });
