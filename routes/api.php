@@ -1,12 +1,18 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\HolidayController;
 use App\Http\Controllers\Api\ScheduleController;
 use App\Http\Controllers\Api\TaskController;
 use Illuminate\Support\Facades\Route;
 
+Route::post('/v1/auth/register', [AuthController::class, 'register']);
+Route::post('/v1/auth/login', [AuthController::class, 'login']);
+
 Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/v1/auth/logout', [AuthController::class, 'logout']);
+
     Route::get('/v1/tasks', [TaskController::class, 'index']);
     Route::post('/v1/tasks', [TaskController::class, 'store']);
     Route::put('/v1/tasks/{id}', [TaskController::class, 'update']);

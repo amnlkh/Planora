@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Contracts\AuthServiceInterface;
+use App\Services\AuthService;
 use App\Contracts\DashboardServiceInterface;
 use App\Contracts\HolidayServiceInterface;
 use App\Contracts\ScheduleServiceInterface;
@@ -15,7 +17,10 @@ use Illuminate\Support\ServiceProvider;
 class PlanoraServiceProvider extends ServiceProvider
 {
     public function register(): void
+
     {
+        $this->app->bind(AuthServiceInterface::class, AuthService::class);
+        
         $this->app->bind(TaskServiceInterface::class, TaskService::class);
 
         $this->app->bind(ScheduleServiceInterface::class, ScheduleService::class);
