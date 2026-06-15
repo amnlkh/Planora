@@ -9,7 +9,7 @@
 
 **Method:** `[GET | POST | PUT | DELETE]`
 
-**URL:** `/api/v1/[resource]`
+**URL:** `/api/[resource]`
 
 **Deskripsi:** `[Jelaskan fungsi endpoint ini]`
 
@@ -52,7 +52,7 @@ Content-Type: application/json
 
 **Method:** `GET`
 
-**URL:** `/api/v1/weather`
+**URL:** `/api/weather`
 
 **Deskripsi:** Mengambil data cuaca terkini berdasarkan nama kota yang dikirim sebagai query parameter, dikonsumsi dari OpenWeatherMap API.
 

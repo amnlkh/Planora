@@ -1,7 +1,12 @@
-<<<<<<< HEAD
 # Planora
-Planora aplikasi web manajemen belajar untuk mahasiswa dengan framework laravel. Memilki 5 Fitur yaitu dashboard, catatan, flashcard, study planner, dan focus timer. 
-=======
+
+Planora adalah aplikasi web manajemen belajar untuk mahasiswa yang dibangun menggunakan framework Laravel. Aplikasi ini memiliki 5 fitur utama:
+1. **Autentikasi Pengguna** - Layanan registrasi, login, dan logout dengan aman.
+2. **Manajemen Tugas (Task Management)** - Menambah, melihat, memperbarui, dan menghapus tugas belajar mahasiswa.
+3. **Dashboard Produktivitas** - Ringkasan statistik tugas aktif, selesai, dan tenggat waktu terdekat.
+4. **Jadwal Belajar dan Deadline** - Pengaturan jadwal belajar harian serta pemantauan tenggat waktu.
+5. **Informasi Hari Libur Nasional** - Integrasi API pihak ketiga (Nager.Date API) untuk menampilkan hari libur nasional Indonesia.
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -68,4 +73,3 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
->>>>>>> d81cadc (add project)

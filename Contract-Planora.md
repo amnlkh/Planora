@@ -237,6 +237,111 @@ https://date.nager.at/api/v3/PublicHolidays/2026/ID
 
 ---
 
+# Schedule Management
+
+## Get All Schedules
+
+### Endpoint
+
+GET /api/schedules
+
+### Request Parameters (Query String)
+
+- `month` (optional, e.g., 6)
+- `year` (optional, e.g., 2026)
+
+### Success Response
+
+```json
+{
+  "status": "success",
+  "data": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "title": "Belajar Laravel",
+      "date": "2026-06-20",
+      "start_time": "09:00",
+      "end_time": "11:00",
+      "note": "Materi Service Provider",
+      "created_at": "2026-06-15T07:00:00.000000Z",
+      "updated_at": "2026-06-15T07:00:00.000000Z"
+    }
+  ]
+}
+```
+
+### Frontend Usage
+
+Menampilkan daftar jadwal belajar di kalender atau agenda.
+
+---
+
+## Create Schedule
+
+### Endpoint
+
+POST /api/schedules
+
+### Request Body
+
+```json
+{
+  "title": "Belajar Laravel",
+  "date": "2026-06-20",
+  "start_time": "09:00",
+  "end_time": "11:00",
+  "note": "Materi Service Provider"
+}
+```
+
+### Success Response
+
+```json
+{
+  "status": "success",
+  "message": "Jadwal belajar berhasil ditambahkan",
+  "data": {
+    "id": 1,
+    "user_id": 1,
+    "title": "Belajar Laravel",
+    "date": "2026-06-20",
+    "start_time": "09:00",
+    "end_time": "11:00",
+    "note": "Materi Service Provider",
+    "created_at": "2026-06-15T07:00:00.000000Z",
+    "updated_at": "2026-06-15T07:00:00.000000Z"
+  }
+}
+```
+
+### Frontend Usage
+
+Form tambah jadwal belajar.
+
+---
+
+## Delete Schedule
+
+### Endpoint
+
+DELETE /api/schedules/{id}
+
+### Success Response
+
+```json
+{
+  "status": "success",
+  "message": "Jadwal belajar berhasil dihapus"
+}
+```
+
+### Frontend Usage
+
+Tombol hapus jadwal belajar.
+
+---
+
 # Frontend Pages Mapping
 
 | Page | API |
@@ -249,3 +354,6 @@ https://date.nager.at/api/v3/PublicHolidays/2026/ID
 | Edit Task | PUT /api/tasks/{id} |
 | Delete Task | DELETE /api/tasks/{id} |
 | Calendar | GET /api/holidays |
+| Schedule List | GET /api/schedules |
+| Add Schedule | POST /api/schedules |
+| Delete Schedule | DELETE /api/schedules/{id} |
